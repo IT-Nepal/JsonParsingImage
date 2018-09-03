@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.ArrayList;
 
 public class ActorAdapter extends ArrayAdapter<Actor> {
@@ -57,6 +59,16 @@ public class ActorAdapter extends ArrayAdapter<Actor> {
         holder.textViewChildren.setText((arrayList.get(position).getChildren()));
         holder.textViewDescription.setText((arrayList.get(position).getDescription()));
         holder.textViewId.setText((arrayList.get(position).getId()));
+
+
+
+//////////////////////////////display image////////////////
+
+        // Then later, when you want to display image
+        ImageLoader.getInstance().displayImage(arrayList.get(position).getImage(), holder.imageView); // Default options will be used
+
+//////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
 
         return convertView;
